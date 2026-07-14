@@ -2,59 +2,68 @@
 
 ## AI Diagnostic & Insight System
 
-MediLens AI is an end-to-end healthcare AI platform capable of:
-
-- Diabetes Prediction
-- Chest X-Ray Classification
-- AI Medical Summary
-- Explainable AI
+MediLens AI is an end-to-end AI healthcare application that predicts diabetes risk and classifies chest X-ray images using Machine Learning and Deep Learning techniques.
 
 ---
 
-## Machine Learning
+## Features
 
-- Logistic Regression
-- Random Forest
-- PCA
-
----
-
-## Deep Learning
-
-- TensorFlow
-- MobileNetV2
-
----
-
-## NLP
-
-- TF-IDF
-- HuggingFace Transformers
+- 🩺 Diabetes Risk Prediction
+- 🫁 Chest X-Ray Classification
+- 📊 Random Forest Classifier
+- 🧠 MobileNetV2 CNN
+- 📉 Principal Component Analysis (PCA)
+- 📈 Exploratory Data Analysis (EDA)
+- 🤖 AI Medical Summary
+- 🔍 Explainable AI (SHAP Structure)
+- 🌐 Streamlit Web Application
 
 ---
 
-## Deployment
+## Technologies Used
 
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- TensorFlow / Keras
 - Streamlit
+- Matplotlib
+- Seaborn
+- SHAP
+- Transformers
 
 ---
 
-## Accuracy
+## Project Structure
 
-### Diabetes
+```text
+MediLens-AI/
+├── app.py
+├── cnn/
+├── datasets/
+├── explainability/
+├── models/
+├── nlp/
+├── notebooks/
+├── report/
+├── README.md
+└── requirements.txt
+```
 
-Random Forest Accuracy
+## Model Performance
 
-72%
+### Diabetes Prediction (Random Forest)
 
-### Chest X-Ray
+- Accuracy: ~72%
+- F1 Score: ~0.61
 
-MobileNetV2 Accuracy
+### Chest X-Ray Classification (MobileNetV2)
 
-89.26%
+- Test Accuracy: ~89.26%
 
 ---
 
-## Author
+## Disclaimer
 
-Akshat
+This application is for educational purposes only and should not replace professional medical advice or diagnosis.
