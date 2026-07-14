@@ -157,42 +157,61 @@ Maintain a healthy lifestyle and continue routine health checkups.
 # X-RAY
 # ==================================================
 
-prediction = cnn_model.predict(img, verbose=0)
+elif page == "🫁 Chest X-Ray":
 
-confidence = float(prediction[0][0])
+    st.title("🫁 Chest X-Ray Classification")
 
-st.divider()
-
-col1,col2 = st.columns(2)
-
-with col1:
-
-    st.metric(
-        "Confidence",
-        f"{confidence*100:.2f}%"
+    uploaded_file = st.file_uploader(
+        "Upload Chest X-Ray",
+        type=["jpg", "jpeg", "png"]
     )
 
-with col2:
+    if uploaded_file is not None:
 
-    if confidence>0.5:
-        st.metric("Prediction","Pneumonia")
-    else:
-        st.metric("Prediction","Normal")
+        image = Image.open(uploaded_file).convert("RGB")
 
-if confidence>0.5:
+        st.image(image, caption="Uploaded X-Ray", use_container_width=True)
 
-    st.error("""
+        img = image.resize((224,224))
+        img = np.array(img, dtype=np.float32)
+        img = img / 255.0
+        img = np.expand_dims(img, axis=0)
+
+        prediction = cnn_model.predict(img, verbose=0)
+
+        confidence = float(prediction[0][0])
+
+        st.divider()
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric(
+                "Confidence",
+                f"{confidence*100:.2f}%"
+            )
+
+        with col2:
+
+            if confidence > 0.5:
+                st.metric("Prediction", "Pneumonia")
+            else:
+                st.metric("Prediction", "Normal")
+
+        if confidence > 0.5:
+
+            st.error("""
 Possible Pneumonia detected.
 
-Please consult a qualified physician.
+Please consult a healthcare professional.
 """)
 
-else:
+        else:
 
-    st.success("""
+            st.success("""
 No signs of Pneumonia detected.
 
-This AI prediction should not replace medical diagnosis.
+This AI prediction should not replace a medical diagnosis.
 """)
 # ==================================================
 # ABOUT
