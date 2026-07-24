@@ -64,6 +64,7 @@ MediLens-AI/
 
 ---
 
-## Disclaimer
+## Live Demo
 
-This application is for educational purposes only and should not replace professional medical advice or diagnosis.
+https://your-streamlit-app-url.streamlit.app
+
