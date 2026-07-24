@@ -66,5 +66,5 @@ MediLens-AI/
 
 ## Live Demo
 
-https://your-streamlit-app-url.streamlit.app
+https://medilens-ai-uijyyhz8agvwhwpesnr23s.streamlit.app/
 
