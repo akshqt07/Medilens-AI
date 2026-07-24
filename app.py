@@ -1,4 +1,3 @@
-from nlp.summary import generate_summary
 import streamlit as st
 import joblib
 import pandas as pd
